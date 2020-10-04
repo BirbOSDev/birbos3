@@ -1,4 +1,4 @@
-CC = i386-elf-gcc
+CC = i686-elf-gcc
 AS = nasm
 CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
