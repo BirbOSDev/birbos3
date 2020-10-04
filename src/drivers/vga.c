@@ -64,6 +64,7 @@ void terminal_putchar(char c) {
 
 
 void terminal_write(const char* data, size_t size) {
+    terminal_putchar('y');
     for (size_t ii=0; ii < size; ii++) {
         terminal_putchar(data[ii]);
     }
@@ -71,7 +72,8 @@ void terminal_write(const char* data, size_t size) {
 
 
 void terminal_writestring(const char* data) {
-    terminal_putchar((char)(strlen(data)+32));
-    //terminal_write(data, strlen(data));
+    //terminal_putchar((char)(strlen(data)+35))
+    terminal_putchar('z');
+    terminal_write(data, strlen(data));
     
 }

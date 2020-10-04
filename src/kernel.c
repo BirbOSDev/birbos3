@@ -15,9 +15,8 @@
 
 void _birbkernel(void){
     terminal_initialize();
-    terminal_putchar("x");
-    //terminal_putchar((char)strlen("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb"));
-    //terminal_putchar("\n");
+    terminal_putchar('x');
+    asm("int 3");
     terminal_writestring("[Works] VGA.c\n");
     for(;;){};
 }
