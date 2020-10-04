@@ -1,4 +1,5 @@
 // GDT driver
+#include <stddef.h>
 #include <stdint.h>
 #define MAX32BIT 0xFFFFFFFF // For readability.
 struct gdt_entry {

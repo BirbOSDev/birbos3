@@ -1,5 +1,6 @@
 // IDT driver
-
+#include <stddef.h>
+#include <stdint.h>
 struct IDTDescriptor {
   uint16_t offset_1; // offset bits 0..15
   uint16_t selector; // a code segment selector in GDT or LDT
