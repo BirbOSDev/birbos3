@@ -1,5 +1,6 @@
 #include "vga.h"
 #include "stdlib.h"
+
 static inline uint8_t vga_entry_color(enum vga_color fg, enum vga_color bg) {
     return fg | bg << 4;
 }
@@ -9,6 +10,10 @@ static inline uint16_t vga_entry(unsigned char uc, uint8_t color) {
     return (uint16_t) uc | (uint16_t) color << 8;
 }
 
+
+
+static const size_t VGA_WIDTH = 80;
+static const size_t VGA_HEIGHT = 20;
 
 size_t terminal_row;
 size_t terminal_column;
@@ -66,6 +71,7 @@ void terminal_write(const char* data, size_t size) {
 
 
 void terminal_writestring(const char* data) {
-    terminal_write(data, strlen(data));
+    terminal_putchar((char)(strlen(data)+32));
+    //terminal_write(data, strlen(data));
+    
 }
-

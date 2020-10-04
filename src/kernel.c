@@ -3,6 +3,7 @@
 //#include "drivers/idt/idt.h"
 #include "drivers/stdlib.h"
 
+
 #if defined(__linux__)
 #error "You are using a linux compiler, a baremetal compiler is required"
 #endif
@@ -14,6 +15,9 @@
 
 void _birbkernel(void){
     terminal_initialize();
-    terminal_writestring("Yay it compiled!");
-    //terminal_putchar('a');
+    terminal_putchar("x");
+    //terminal_putchar((char)strlen("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb"));
+    //terminal_putchar("\n");
+    terminal_writestring("[Works] VGA.c\n");
+    for(;;){};
 }

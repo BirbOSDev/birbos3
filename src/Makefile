@@ -1,4 +1,4 @@
-CC = i686-elf-gcc
+CC = i386-elf-gcc
 AS = nasm
 CFLAGS = -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
@@ -21,3 +21,6 @@ clean:
 	rm -rf *.o
 	rm -rf *.bin
 	rm -rf drivers/*/*.o drivers/*.o
+qemu:
+	qemu-system-i386 -kernel kernel.bin
+.PHONY: clean qemu
