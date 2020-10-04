@@ -9,6 +9,9 @@ all: kernel.bin
 %.o: %.s
 	${AS} -f elf32 $< -o $@
 
+%.0: %.asm
+	${AS} -f elf32 $< -o $@
+
 drivers/%.o: drivers/%.c
 	${CC} -c $< -o $@ -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
